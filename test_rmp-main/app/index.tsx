@@ -1,33 +1,28 @@
 // Импорт компонентов из проекта
 import Button from "@/components/Button/Button"; // Кнопка для действий
 import Input from "@/components/Input/Input"; // Поле ввода для текста задач
-import TodoItem from "@/components/TodoItem/TodoItem"; // Компонент отображения одной задачи
-import useTodos from "@/hooks/use-todos"; // Кастомный хук для управления задачами
+import TodoItem from "@/components/TodoItem/TodoItem"; // Компонент отображения задачи
+import useTodos from "@/hooks/use-todos"; // Хук для управления задачами
 import { useState } from "react"; // React хук для состояния
-import { ScrollView, StyleSheet, Text, View } from "react-native"; // Базовые компоненты React Native
+import { ScrollView, StyleSheet, Text, View } from "react-native"; // React Native
 
 // Основной компонент экрана со списком задач
 export default function Index() {
-  // Использование кастомного хука useTodos для управления задачами:
-  // todos - массив всех задач
-  // addTodo - функция добавления новой задачи
-  // deleteTodo - функция удаления задачи по ID
-  // toggleTodo - функция переключения статуса выполнения задачи
-  // clearCompleted - функция очистки выполненных задач
+  // Использование хука useTodos для управления задачами
   const { todos, addTodo, deleteTodo, toggleTodo, clearCompleted } = useTodos();
   
   // Состояние для хранения текста новой задачи
   const [text, setText] = useState<string>("");
 
   return (
-    // ScrollView позволяет прокручивать контент, если он не помещается на экране
+    // ScrollView - позволяет прокручивать контент, если он не помещается на экране
     <ScrollView contentContainerStyle={styles.container}>
       {/* Заголовок экрана */}
       <Text style={styles.title}>Мои задачи</Text>
 
       {/* Контейнер для поля ввода и кнопки добавления */}
       <View style={styles.inputContainer}>
-        {/* Компонент Input для ввода текста новой задачи */}
+        {/* Input для ввода текста новой задачи */}
         <Input 
           value={text}           // Текущее значение поля ввода
           onChangeText={setText} // Обработчик изменения текста
@@ -65,11 +60,11 @@ export default function Index() {
   )
 }
 
-// Объект стилей для компонента
+// Объект стилей
 const styles = StyleSheet.create({
   title: {
     fontSize: 28,       // Размер шрифта заголовка
-    fontWeight: "700",  // Жирность шрифта (bold)
+    fontWeight: "700",  // Жирность шрифта
     marginBottom: 20,   // Отступ снизу
   },
   container: {
