@@ -22,7 +22,7 @@ export default function TodoItem({ item, onToggle, onDelete }: TodoItemProps) {
       {/* Текст задачи с зачеркиванием, если выполнена */}
       <Text style={[
         styles.text,
-        item.completed && styles.textCompleted // Условный стиль
+        item.completed && styles.textCompleted 
       ]}>
         {item.text}
       </Text>
