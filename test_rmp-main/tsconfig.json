@@ -1,0 +1,15 @@
+{
+  "extends": "expo/tsconfig.base",      // Базовый конфиг Expo для TypeScript
+  "compilerOptions": {
+    "strict": true,                      // Включен строгий режим TypeScript
+    "paths": {
+      "@/*": ["./*"]                     // Алиас @ для корня проекта
+    }
+  },
+  "include": [                           // Файлы для компиляции
+    "**/*.ts",                           // Все .ts файлы
+    "**/*.tsx",                          // Все .tsx файлы
+    ".expo/types/**/*.ts",               // Типы Expo
+    "expo-env.d.ts"                      // Глобальные декларации Expo
+  ]
+}
