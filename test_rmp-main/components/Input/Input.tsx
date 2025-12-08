@@ -22,7 +22,7 @@ export default function Input({
       value={value}
       onChangeText={onChangeText}
       placeholder={placeholder}
-      style={[style, styles.base]}       // Кастомные + базовые стили
+      style={[style, styles.base]}       
       onSubmitEditing={onSubmitEditing}
     />
   )
