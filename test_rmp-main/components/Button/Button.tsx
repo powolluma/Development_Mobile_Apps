@@ -1,7 +1,7 @@
 import { ReactNode } from "react";
 import { Pressable, StyleSheet, ViewStyle } from "react-native";
 
-// Пропсы компонента Button
+// Пропсы Button
 type ButtonProps = {
   children: ReactNode;    // Контент внутри кнопки
   onPress: () => void;    // Обработчик клика
@@ -14,12 +14,12 @@ export default function Button({ children, onPress, style, type = "primary" }: B
   return (
     <Pressable
       onPress={onPress}
-      // Динамические стили: базовый + тип + кастомные + анимация нажатия
+      // Динамические стили
       style={({ pressed }) => [
         styles.base,
-        styles[type],        // Цвет по типу (primary/danger)
-        style,               // Кастомные стили
-        pressed && styles.pressed // Эффект при нажатии
+        styles[type],        
+        style,              
+        pressed && styles.pressed 
       ]}
     >
       {children}
