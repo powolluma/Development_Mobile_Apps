@@ -1,7 +1,7 @@
-// Импортируем компонент Stack из библиотеки 'expo-router'
+// Импорт Stack из библиотеки 'expo-router'
 import { Stack } from 'expo-router';
 
-// Экспортирует RootLayout
+// Экспорт RootLayout
 export default function RootLayout() {
   return (
     // Создаем контейнер Stack для управления навигацией
